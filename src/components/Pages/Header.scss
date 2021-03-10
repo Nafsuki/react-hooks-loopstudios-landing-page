@@ -1,0 +1,97 @@
+@import '../config';
+
+.Header {
+  color: $white;
+  height: 52rem;
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0 16.5rem;
+  z-index: -1;
+  @include respond(desktop) {
+    height: 35rem;
+    // height: 44.8rem;
+    padding: 0 8vw;
+  }
+  @include respond(tablet) {
+    // height: 120rem;
+    height: 91rem;
+  }
+  @include respond(mobile) {
+    // height: 91rem;
+    height: 52rem;
+  }
+  @include respond(mobileS) {
+    height: 52rem;
+    padding: 0 6vw;
+  }
+  background: {
+    image: url('../assets/images/desktop/image-hero.jpg');
+    size: 100%;
+    position: center -13rem;
+    repeat: no-repeat;
+  }
+  @include respond(tablet) {
+    justify-content: center;
+    align-items: center;
+    background: {
+      image: url('../assets/images/mobile/image-hero.jpg');
+    }
+  }
+}
+
+.header-title {
+  width: 65rem;
+  height: 28rem;
+  border: 0.1rem solid $white;
+  margin: 12.5rem 0 0;
+  padding: 4rem 5rem;
+  position: absolute;
+  top: 0;
+  @include respond(desktop) {
+    width: 45rem;
+    height: 20rem;
+    padding: 3vw;
+    margin: 6vw 0 0;
+  }
+  @include respond(tablet) {
+    width: calc(100% - 16vw);
+    height: 40rem;
+    margin: 30% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @include respond(mobile) {
+    height: 20rem;
+    margin: 35% 0;
+  }
+  @include respond(mobileS) {
+    margin: 25% 0;
+    width: calc(100% - 12vw);
+    height: 22rem;
+    padding: 6vw;
+  }
+  h1 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 6.8rem;
+    text-transform: uppercase;
+    font-family: $font-family-2;
+    @include respond(desktop) {
+      font-size: 4.5rem;
+    }
+    @include respond(tablet) {
+      font-size: calc(5.5rem + 2vw);
+      line-height: calc(6rem + 2vw);
+    }
+    @include respond(mobile) {
+      font-size: calc(3.5rem + 2vw);
+      line-height: calc(3.5rem + 2vw);
+    }
+    @include respond(mobileS) {
+      font-size: calc(3.3rem + 1.8vw);
+    }
+  }
+}

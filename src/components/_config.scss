@@ -1,0 +1,76 @@
+// Font faces
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
+// Variables
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$dark-gray: hsl(0, 0%, 55%);
+$very-dark-gray: hsl(0, 0%, 41%);
+$font-family-1: 'Alata', sans-serif;
+$font-family-2: 'Josefin Sans', sans-serif;
+
+// Mixins
+@mixin hoverLine {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  height: 0.2rem;
+  background-color: $white;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  bottom: -1.2rem;
+  width: 2.3rem;
+}
+
+@mixin Nav {
+  display: flex;
+  .logo {
+    cursor: pointer;
+  }
+  .nav-menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    li {
+      cursor: pointer;
+      a {
+        font-size: 1.7rem;
+        color: $white;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 1.5rem;
+        position: relative;
+        @include respond(mobileM) {
+          font-size: 1.5rem;
+          margin: 1rem;
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+@mixin respond($breakpoint) {
+  @if $breakpoint == desktop {
+    @media (max-width: 1280px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media (max-width: 960px) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobile {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobileS {
+    @media (max-width: 375px) {
+      @content;
+    }
+  }
+}

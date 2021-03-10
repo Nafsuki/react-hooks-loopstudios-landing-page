@@ -1,0 +1,17 @@
+@import './components/config';
+
+// General Settings
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: $font-family-2;
+  margin: 0;
+  padding: 0;
+}

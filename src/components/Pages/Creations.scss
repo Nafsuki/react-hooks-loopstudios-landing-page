@@ -1,0 +1,153 @@
+@import '../config';
+.Creations {
+  // border: 1px solid red;
+  padding: 10rem 16.5rem 15rem;
+  @include respond(desktop) {
+    padding: 10rem 8vw 15rem;
+  }
+  @include respond(mobile) {
+    position: relative;
+  }
+  @include respond(mobile) {
+    padding: 0rem 8vw 20rem;
+  }
+}
+
+.creations-header {
+  display: flex;
+  justify-content: space-between;
+  @include respond(tablet) {
+    margin: 3rem 0;
+  }
+  @include respond(mobileS) {
+    justify-content: center;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 4rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    @include respond(mobileS) {
+      font-size: 3.2rem;
+    }
+  }
+  .btn {
+    width: 16rem;
+    height: 4rem;
+    color: $black;
+    background-color: $white;
+    border: 0.2rem solid $very-dark-gray;
+    outline: none;
+    font-size: 1.5rem;
+    border-radius: 0.2rem;
+    letter-spacing: 0.2rem;
+    font-family: $font-family-1;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    @include respond(mobile) {
+      position: absolute;
+      bottom: 11rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &:hover {
+      background-color: $black;
+      color: $white;
+    }
+  }
+}
+
+.card-container {
+  // border: 1px solid #0000ff;
+  margin: 5rem 0 0;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(2, auto);
+  flex-wrap: wrap;
+  row-gap: 2rem;
+  @include respond(tablet) {
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(8, auto);
+  }
+  .card {
+    width: 25.5rem;
+    height: 45rem;
+    position: relative;
+    cursor: pointer;
+    transition: all 1s ease;
+    z-index: 0;
+    opacity: 1;
+    background: {
+      size: 100% 100%;
+      position: cover;
+      repeat: no-repeat;
+    }
+    @include respond(desktop) {
+      width: 20rem;
+      height: 35.5rem;
+    }
+    @include respond(tablet) {
+      // border: 1px solid red;
+      width: calc(100vw - 16vw);
+      height: calc(25rem + 5vw);
+    }
+    @include respond(mobile) {
+      height: calc(18rem + 5vw);
+    }
+    @include respond(mobileS) {
+      height: calc(11rem + 5vw);
+    }
+    .card-filter {
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.6);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    .title {
+      position: absolute;
+      width: 90%;
+      z-index: 2;
+      margin: 0;
+      padding: 2.5rem;
+      bottom: 0;
+      color: $white;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      line-height: 3.5rem;
+      font-size: 3rem;
+      transition: all 0.3s ease;
+      @include respond(mobileS) {
+        font-size: 2.5rem;
+        padding: 1.2rem;
+        line-height: 2.5rem;
+        width: 55%;
+      }
+    }
+
+    &:hover {
+      .card-filter {
+        opacity: 1;
+      }
+      .title {
+        color: $black;
+      }
+    }
+  }
+}
+
+.desktop-card {
+  @include respond(tablet) {
+    display: none;
+  }
+}
+
+.mobile-card {
+  display: none;
+  @include respond(tablet) {
+    display: block;
+  }
+}
