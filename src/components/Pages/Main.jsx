@@ -8,8 +8,8 @@ const Main = () => {
     <div className="Main">
       <div className="main-title">
         <div className="img-container">
-          <img src={InteractiveDesktop} alt="interactive image" className="img-desktop-interactive"/>
-          <img src={InteractiveMobile} alt="interactive image" className="img-mobile-interactive"/>
+          <img src={InteractiveDesktop} alt="interactive" className="img-desktop-interactive"/>
+          <img src={InteractiveMobile} alt="interactive" className="img-mobile-interactive"/>
         </div>
         <div className="txt-container">
           <h2>the leader in<br />interactive vr</h2>
